@@ -41,7 +41,8 @@
     }, onGetDirectorySuccess, onGetDirectoryFail);
    
 
-  }
+
+
 
   function onGetDirectorySuccess(dir) {
   console.log("Created dir " + dir.name);
@@ -83,21 +84,7 @@
   }, fail);
 
  } 
-//downloading end------------------------------
- function showLink(url) {
-
-  //alert(url);
-  //$("#open").show();
-
-  
-  console.log(url + " ab check kro");
-  //extractFile(url);
-  
-  // start extracting zip
-        console.log('start extracting now vip');         
-   
- 
-                 function extractFile(fileName, destination)
+  function extractFile(fileName, destination)
     {
         window.plugins.extractZipFile.extractFile(fileName,destination,win,fail);
     }
@@ -112,11 +99,28 @@
         alert(error);
     }
 
+  }
+//downloading end------------------------------
+ function showLink(url) {
+
+  //alert(url);
+  //$("#open").show();
+
+  
+  console.log(url + " ab check kro");
+  //extractFile(url);
+  
+  // start extracting zip
+        console.log('start extracting now vip');         
+   
+ 
+                
+
 
        
         console.log(sPath + "example/" + "site.zip");
 
-       extractFile('example/site.zip', '/example'); 
+       //extractFile('example/site.zip', '/example'); 
 
         console.log('end extracting now vip, my func is fine ');
        // extractFile('example/site.zip');
@@ -144,7 +148,10 @@
 <div class="wrap">
 <h1>Home Elevator</h1>
 <div class="letest">
-<span> Refresh for latest version</span><a class="button" onclick="onBodyLoad()"  href="#">Refresh</a>
+<span> Refresh for latest version</span>
+<a class="button" onclick="onBodyLoad()"  href="#">Refresh</a>
+<br><br>
+<a class="button"  onClick="extractFile('/path/to/ZipFile.zip', '/path/to/extract/to');"  href="#">Refresh2</a>
 </div>
 <div class="browse">
 <a href="#">Browse Now</a>
